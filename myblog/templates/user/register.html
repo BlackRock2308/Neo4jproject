@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'CSS/css/bootstrap.min.css' %}" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center ">
+            <div class="col-md-6">
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="card">
+                       
+                        <div class="card-header bg-dark text-warning justify-align-center">
+                         <div class="row justify-content-center">
+                        <h3>S'inscrire</h3>
+                        </div>
+                       
+                        </div>
+                    <div class="card-body  shadow">
+                        <div class="list-group-item">
+                      
+                            <label>Prenom</label>
+                            <input type="text" class="form-control" name="prenom" placeholder="Entrer votre prénom">
+                        </div>
+                        <div class="list-group-item">
+                            <label>Nom</label>
+                            <input type="text" class="form-control" name="nom" placeholder="Entrer votre nom">
+                        </div>
+                        <div class="list-group-item">
+                            <label>Username</label>
+                            <input type="text" class="form-control" name="username" placeholder="Entrer votre nom d'utilisateur">
+                        </div>
+                        <div class="list-group-item">
+                            <label>Email</label>
+                            <input type="email" class="form-control" name="email" placeholder="Entrer votre adresse email">
+                        </div>
+                        <div class="list-group-item">
+                            <label>Passsword</label>
+                            <input type="password" class="form-control" name="password" placeholder="Entrer votre mot de pass">
+                        </div>
+                        <div class="row justify-content-center">
+                        <button type="submit" class="btn btn-success mt-2 text-align-center">S'inscrire</button>
+                        </div>
+                        <span><small>Do you have already an account?</small><a href="{% url 'log' %}"> Sign in</a></span>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'JS/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'JS/js/bootstrap.js' %}"></script>
+</body>
+</html>

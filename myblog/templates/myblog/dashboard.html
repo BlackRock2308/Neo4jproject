@@ -1,0 +1,80 @@
+{% extends 'myblog/base.html' %}
+
+{% block content%}
+
+   <!-- dashboaRd contet start -->
+   <div class=" py-3 text-white text-dark">
+    <h1>&nbsp;&nbsp;<i class="fas fa-chart-bar"></i> Dashboard</h1>
+  </div>
+  {% include 'myblog/status.html' %}
+  <div class="container-fluid">
+    <div class="row"> 
+      <div class="col-12">
+        <h2 style="background-color: grey;" class="text-white p-2 text-center">USERS</h2>
+        
+        <!-- creating table -->
+        <table class="table mt-3">
+          <thead class="table-dark">
+            <tr>
+              
+              <th>code</th>
+              <th>Prenom</th>
+              <th>Nom</th>
+              <th>Username</th>
+              <th>see more</th>
+            </tr>
+          </thead>
+          <tbody>
+              {% for user in users %}
+            <tr>
+              <td>{{ user.n.code}}</td>
+              <td>{{ user.n.prenom}}</td>
+              <td>{{ user.n.nom}}</td>
+              <td>{{ user.n.username}}</td>
+              <td><a href="#" class="btn btn-outline-secondary btn-sm">
+                 Details <i></i>
+              </a></td>
+            </tr>
+            {% endfor%}
+           
+          </tbody>
+        </table>
+      </div>
+    </div>
+<!-- 
+    <div   class="col-md-4 mt-4">
+        <div class="card">
+          <div class=" bg-dark text-white p-4">
+            <i class="fas fa-list-ul fa-6x"></i>
+            <h2 class="float-right font-weight-bold" style="font-size: 50px; text-align: center;">{{nombre_actors}} <span class="d-block">Actors</span></h2>
+          </div>
+          <div class="card-footer text-primary">
+            <h6 class="text-center"><a href=""> View Details
+            <i class="fas fa-arrow-alt-circle-right"></i></h6></a>
+          </div>
+        </div>
+        <div class="card mt-5">
+          <div class=" bg-secondary text-white p-4 ">
+            <i class="fas fa-list-ul fa-6x"></i>
+            <h2 class="float-right font-weight-bold" style="font-size: 40px; text-align: center;">04 <span class="d-block">Categories</span></h2>
+          </div>
+          <div class="card-footer text-primary">
+            <h6 class="text-center"><a href=""> View Details
+            <i class="fas fa-arrow-alt-circle-right"></i></h6></a>
+          </div>
+        </div>
+        <div class="card mt-5">
+          <div class=" bg-dark text-white p-4 ">
+            <i class="fas fa-list-ul fa-6x"></i>
+            <h2 class="float-right font-weight-bold" style="font-size: 50px; text-align: center;">{{nombre_movies}}<span class="d-block">Movies</span></h2>
+          </div>
+          <div class="card-footer text-warning">
+            <h6 class="text-center"><a href=""> View Details
+            <i class="fas fa-arrow-alt-circle-right"></i></h6></a>
+          </div>
+        </div>
+    </div> 
+   -->
+  </div>
+
+{% endblock%}

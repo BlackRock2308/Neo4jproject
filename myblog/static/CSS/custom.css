@@ -1,0 +1,9 @@
+/* your styles go here */
+
+#mycover{
+    background: url("/static/IMAGES/userbg.png") no-repeat fixed;
+    background-size: cover;
+    background-position: center center;
+      
+    }
+

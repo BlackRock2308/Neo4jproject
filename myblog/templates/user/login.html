@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'CSS/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <title>Document</title>
+</head>
+<body>
+    <div class="container mt-2">
+        <div class="row justify-content-center">
+        <div class="col-md-6">
+        
+        <form method="POST">
+            {% csrf_token %}
+            <div class="card">
+                <div class="card-header bg-dark text-warning">
+                    <div class="row justify-content-center">
+                    <h1>Se connecter</h1>
+                    </div>
+                </div>
+                <div class="card-body">
+                <div class="form-group">
+                {% if message %}
+                {% for message in  messages%}
+                    <div class="alert">{{message}}</div>
+                {% endfor %}
+                {% endif %}
+                <div class="alert">
+                 </div>
+                <label >Username</label>
+                <input type="text" class="form-control"  name="username">
+                
+                </div>
+                <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control"  name="password">
+                </div>
+                <div class="row justify-content-center">
+                <button type="submit" class="btn btn-primary text-align-center">Submit</button>
+                </div>
+                <span><small>You haven't an account?</small><a href="{% url 'signUp' %}"> Sign up</a></span>
+            </div>
+        </div>
+        </form>
+    
+    </div>
+    </div>
+    </div>
+</body>
+<script src="{% static 'CSS/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'CSS/js/jquery.min.js' %}"></script>
+<script src="{% static 'CSS/js/bootstrap.min.js' %}"></script>
+</html>
